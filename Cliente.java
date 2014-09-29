@@ -1,13 +1,14 @@
 class Cliente{
 
 	//Atrubutos del cliente
-	private int edad;	
+	private int edad, numCliente;	
 	private String nombre, sexo;
 	private Direccion dir;
 	private ArregloEntero tels;
 	private Mascotas masco;
 
 	public Cliente(int maxMascotas, int maxTels){
+		leeNumeroDeCliente();
 		leeNombreCliente();
 		leeSexoCliente();
 		leeEdadCliente();
@@ -18,17 +19,25 @@ class Cliente{
 
 	//*********************Objetos de las otras clases***********
 
+	private void leeNumeroDeCliente(){
+		numCliente = Teclado.entero("Ingresa el numero de cliente: ");
+	}
+
 	//Guarda el nombre del alumno
 	private void leeNombreCliente(){
 		nombre = Teclado.cadena("Ingresa el nombre del cliente: ");
 	}
 
 	private void leeSexoCliente(){
-		nombre = Teclado.cadena("Ingresa el sexo del cliente: ");
+		sexo = Teclado.cadena("Ingresa el sexo del cliente: ");
 	}
 	
 	private void leeEdadCliente(){
 		edad = Teclado.entero("Ingresa la edad del cliente: ");
+	}
+
+	public int getNumeroCliente(){
+		return numCliente;
 	}
 
 	//Captura telefonos validando que exista espacio en ArregloEnteros
@@ -54,14 +63,18 @@ class Cliente{
 
 	//Lista los atributos locales, los de otras clases lo listan con sus porpio metodos
 	public void listar(){
-		System.out.println("\t\n*******Datos de alumno*******");
-		System.out.println("\nNombre del cliente: "+ nombre);
+		System.out.println("\t\n*******Datos del CLIENTE*******");
+		System.out.println("Numero de cliente: " + numCliente);
+		System.out.println("\nNombre del cliente: " + nombre);
 		//Lista con los metodos propios
 		System.out.println("\nTelefonos: ");
 		tels.listar();
 		System.out.println("\nDireccion: ");
 		dir.listar();
+		System.out.println("\n*******Datos de la MASCOTA*******");
+		masco.listarDatosMascota();
 		System.out.println("\n");
+
 	}
 
 	//Actualiza los datos del alumno

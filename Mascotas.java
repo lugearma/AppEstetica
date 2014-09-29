@@ -14,7 +14,7 @@ class Mascotas{
 
 	//Pide nombre
 	private void leeNombre(){
-		nombre = Teclado.cadena("Nombre de la mascota :");
+		nombre = Teclado.cadena("Nombre de la mascota: ");
 	}
 
 	//Pide raza
@@ -71,4 +71,7 @@ class Mascotas{
 			}
 		}while(opc != 5);
 	}
+
+	//============================EXPONE ALGUNOS DATOS NECESARIOS====================================
+	public int 
 }

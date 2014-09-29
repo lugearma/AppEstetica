@@ -43,7 +43,7 @@ class ArregloClientes {
 	public int buscarDato(int dato){
 		for(int i = 0; i <= indice; i++)
 			//Checamos si la cuenta existe
-			if(arreglo[i].getCuenta() == dato)
+			if(arreglo[i].getNumeroCliente() == dato)
 				return i;
 		// System.out.println("No existe el Cliente");
 		return -1;
